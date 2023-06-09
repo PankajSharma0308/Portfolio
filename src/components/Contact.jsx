@@ -6,6 +6,12 @@ import { EarthCanvas } from './canvas';
 import { SectionWrapper } from '../hoc';
 import { slideIn } from '../utils/motion';
 
+const VITE_APP_TO_EMAIL = import.meta.env.VITE_APP_TO_EMAIL;
+const VITE_APP_MY_NAME = import.meta.env.VITE_APP_MY_NAME;
+const VITE_APP_EMAILJS_TEMPLATE_ID = import.meta.env.VITE_APP_EMAILJS_TEMPLATE_ID;
+const VITE_APP_EMAILJS_GMAIL_SERVICE_ID = import.meta.env.VITE_APP_EMAILJS_GMAIL_SERVICE_ID;
+const VITE_APP_EMAILJS_PUBLIC_KEY = import.meta.env.VITE_APP_EMAILJS_PUBLIC_KEY;
+
 const Contact = () => {
 
   const formRef = useRef();
@@ -18,8 +24,47 @@ const Contact = () => {
 
   const [loading, setLoading] = useState(false);
 
-  const handleChange = (e) => {};
-  const handleSubmit = (e) => {};
+  const handleChange = (e) => {
+    const { target } = e;
+    const { name, value } = target;
+
+    setForm({
+      ...form,
+      [name]: value,
+    });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setLoading(true);
+
+    emailjs.send(
+      VITE_APP_EMAILJS_GMAIL_SERVICE_ID,
+      VITE_APP_EMAILJS_TEMPLATE_ID, 
+      {
+        from_name: form.name,
+        to_name: VITE_APP_MY_NAME,
+        from_email: form.email,
+        to_email: VITE_APP_TO_EMAIL,
+        message: form.message.concat(' | '+form.email)
+      },
+      VITE_APP_EMAILJS_PUBLIC_KEY
+      )
+      .then(() => {
+        setLoading(false);
+        alert("Thank You. I will get back to you ASAP. Trust me.");
+
+        setForm({
+          name: "",
+          email: "",
+          message: ""
+        });
+      }, (error) => {
+        setLoading(false);
+        console.log(error);
+        alert("Uh Oh, Something Went Wrong.");
+      });
+  };
 
 
   return (
@@ -55,7 +100,7 @@ const Contact = () => {
             <span className='text-white font-medium mb-4'>Your Email</span>
             <input 
               type='email'
-              name='Email'
+              name='email'
               value={form.email}
               onChange={handleChange}
               placeholder="What's your Email?"
@@ -68,8 +113,8 @@ const Contact = () => {
             <span className='text-white font-medium mb-4'>Your Message</span>
             <textarea
               rows='7' 
-              name='Message'
-              value={form.name}
+              name='message'
+              value={form.message}
               onChange={handleChange}
               placeholder="Write a Message."
               className='bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg 

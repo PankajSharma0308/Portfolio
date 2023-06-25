@@ -32,6 +32,7 @@ import jobit from "./jobit.png";
 import tripguide from "./tripguide.png";
 import cryptether from "./cryptether.png";
 import hosalot from "./hosalot.png";
+import covidtracker from "./covidtracker.png";
 
 export {
   logo,
@@ -64,5 +65,6 @@ export {
   tripguide,
   ihx,
   cryptether,
-  hosalot
+  hosalot,
+  covidtracker
 };

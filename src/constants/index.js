@@ -25,7 +25,8 @@ import {
     threejs,
     ihx,
     cryptether,
-    hosalot
+    hosalot,
+    covidtracker
   } from "../assets";
   
   export const navLinks = [
@@ -49,11 +50,11 @@ import {
       icon: web,
     },
     {
-      title: "Full Stack Developer",
+      title: "Android Developer",
       icon: mobile,
     },
     {
-      title: "Android Developer",
+      title: "Full Stack Developer",
       icon: backend,
     },
     {
@@ -185,7 +186,28 @@ import {
       ],
       image: hosalot,
       source_code_link: "https://github.com/PankajSharma0308/Hosalot",
-    }
+    },
+    {
+      name: "Covid Tracker",
+      description:
+        "WebApp made using EJS, Nodejs and css+html. WebApp is containerized using docker and is deployed in the AWS Elastic Beanstalk.",
+      tags: [
+        {
+          name: "Ejs",
+          color: "blue-text-gradient",
+        },
+        {
+          name: "nodejs",
+          color: "green-text-gradient",
+        },
+        {
+          name: "aws",
+          color: "pink-text-gradient",
+        },
+      ],
+      image: covidtracker,
+      source_code_link: "https://github.com/PankajSharma0308/covidTracker",
+    },
   ];
   
   export { services, technologies, experiences, testimonials, projects };

@@ -23,18 +23,7 @@ const Ball = (props) => {
 
 const BallCanvas = ({ icon, name }) => (
   <>
-  <Canvas
-      frameloop='demand'
-      gl={{ preserveDrawingBuffer: true}}
-    >
-      <Suspense fallback={<CanvasLoader />}>
-        <OrbitControls 
-          enableZoom={false}
-        />
-        <Ball imgUrl={icon}  />
-      </Suspense>
-      <Preload all/>
-    </Canvas>
+    <img src={icon}  />
     <div className='flex flex-auto justify-center'>
       {name}
     </div>

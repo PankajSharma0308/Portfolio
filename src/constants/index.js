@@ -23,6 +23,9 @@ import {
     jobit,
     tripguide,
     threejs,
+    ihx,
+    cryptether,
+    hosalot
   } from "../assets";
   
   export const navLinks = [
@@ -46,15 +49,15 @@ import {
       icon: web,
     },
     {
-      title: "React Native Developer",
+      title: "Full Stack Developer",
       icon: mobile,
     },
     {
-      title: "Backend Developer",
+      title: "Android Developer",
       icon: backend,
     },
     {
-      title: "Content Creator",
+      title: "Software Developer",
       icon: creator,
     },
   ];
@@ -73,16 +76,8 @@ import {
       icon: javascript,
     },
     {
-      name: "TypeScript",
-      icon: typescript,
-    },
-    {
       name: "React JS",
       icon: reactjs,
-    },
-    {
-      name: "Redux Toolkit",
-      icon: redux,
     },
     {
       name: "Tailwind CSS",
@@ -93,20 +88,12 @@ import {
       icon: nodejs,
     },
     {
-      name: "MongoDB",
-      icon: mongodb,
-    },
-    {
       name: "Three JS",
       icon: threejs,
     },
     {
       name: "git",
       icon: git,
-    },
-    {
-      name: "figma",
-      icon: figma,
     },
     {
       name: "docker",
@@ -118,7 +105,7 @@ import {
     {
       title: "Software Engineer Intern",
       company_name: "IHX Private Limited",
-      icon: starbucks,
+      icon: ihx,
       iconBg: "#383E56",
       date: "January 2023 - May 2023",
       points: [
@@ -158,30 +145,30 @@ import {
   
   const projects = [
     {
-      name: "Car Rent",
+      name: "CryptEthers",
       description:
-        "Web-based platform that allows users to search, book, and manage car rentals from various providers, providing a convenient and efficient solution for transportation needs.",
+        "Web3 platform that allows users to Send and receive Ethereum. The Project is coded in ReactJs, Solidity and NodeJs.",
       tags: [
         {
           name: "react",
           color: "blue-text-gradient",
         },
         {
-          name: "mongodb",
-          color: "green-text-gradient",
+          name: "solidity",
+          color: "black-text-gradient",
         },
         {
-          name: "tailwind",
-          color: "pink-text-gradient",
+          name: "nodejs",
+          color: "green-text-gradient",
         },
       ],
-      image: carrent,
-      source_code_link: "https://github.com/",
+      image: cryptether,
+      source_code_link: "https://github.com/PankajSharma0308/CryptEthers",
     },
     {
-      name: "Job IT",
+      name: "Hosalot",
       description:
-        "Web application that enables users to search for job openings, view estimated salary ranges for positions, and locate available jobs based on their current location.",
+        "University website for streamlined hostel management. Frontend designed with HTML, CSS, and JavaScript, connected to Node.js using Express",
       tags: [
         {
           name: "react",
@@ -196,30 +183,9 @@ import {
           color: "pink-text-gradient",
         },
       ],
-      image: jobit,
-      source_code_link: "https://github.com/",
-    },
-    {
-      name: "Trip Guide",
-      description:
-        "A comprehensive travel booking platform that allows users to book flights, hotels, and rental cars, and offers curated recommendations for popular destinations.",
-      tags: [
-        {
-          name: "nextjs",
-          color: "blue-text-gradient",
-        },
-        {
-          name: "supabase",
-          color: "green-text-gradient",
-        },
-        {
-          name: "css",
-          color: "pink-text-gradient",
-        },
-      ],
-      image: tripguide,
-      source_code_link: "https://github.com/",
-    },
+      image: hosalot,
+      source_code_link: "https://github.com/PankajSharma0308/Hosalot",
+    }
   ];
   
   export { services, technologies, experiences, testimonials, projects };
